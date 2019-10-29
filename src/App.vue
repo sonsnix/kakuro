@@ -1,29 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-app>
+    <v-app-bar app>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>Kakuro</span>
+        <span class="font-weight-light"> Next-level Sudoku</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-content>
+      <Main />
+    </v-content>
+  </v-app>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Vue from "vue";
+import Main from "./components/Main.vue";
 
-@Component({
+export default Vue.extend({
+  name: "App",
   components: {
-    HelloWorld
-  }
-})
-export default class App extends Vue {}
+    Main
+  },
+  data: () => ({
+    //
+  })
+});
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
